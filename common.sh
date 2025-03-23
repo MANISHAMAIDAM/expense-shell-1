@@ -10,8 +10,8 @@ trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
 
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
-SCRIPT_NAME=$(echo $0 | cut -d "." -f2)
-LOGFILE=/tmp/$SCRIPT_NAME_$TIMESTAMP.log
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
