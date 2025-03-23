@@ -40,6 +40,6 @@ systemctl enable backend &>>$LOGFILE
 
 dnf install mysql -y &>>$LOGFILE
 
-mysql -h db.ramani280791.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
+mysql -h db.ramani280791.online -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
 
 systemctl restart backend &>>$LOGFILE
