@@ -15,6 +15,7 @@ systemctl start mysqld &>>$LOGFILE
 
 #Below code will be useful for idempotent nature
 mysql -h db.ramani280791.online -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
+
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOGFILE
